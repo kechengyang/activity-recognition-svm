@@ -3,6 +3,10 @@ Environment and Tools
 Android Studio, Android SDK 26, JAVA jar and other essential component according to the tips of android studio console.
 A Android device（recommend ANdroid 6.0）which can use GPS and internet.
 
+Normally, there is only 1 warning without any errors in whole project.
+but based on the specific sdk content and version, you might be install more sdk components on your device. 
+
+
 Implementation
 (a)	Run Challenge1 on Android Studio based on Android 6.0(sdk 26), create and install apk on real Android (6.0) device.
 (b)	For test, I have output debug version for installation 
