@@ -1,0 +1,27 @@
+Environment and Tools
+
+Android Studio, Android SDK 26, JAVA jar and other essential component according to the tips of android studio console.
+A Android device（recommend ANdroid 6.0）which can use GPS and internet.
+
+Implementation
+(a)	Run Challenge1 on Android Studio based on Android 6.0(sdk 26), create and install apk on real Android (6.0) device.
+(b)	For test, I have output debug version for installation 
+challenge1\challenge1\app\build\outputs\apk\debug\app-debug.apk !!!
+(c)	Before running App which name is WalkingRunningJumping on your device, make sure that authorize this app for storage permission, GPS and internet permission in your setting menu.
+(d)	Open android app on your device, you can see 1 editable box and 5 buttons below.
+-	Test box
+There are only 3 options for the label of recording your training data – walking, running and jumping which will be set as labels of your training set for SVM model.
+-	Record data
+Click this button, your device sensor accelerator will start to record your x,y,z value and save them into a sql database created by the app. When you get the message of toast dialog box, the record process has been done.
+-	Convert data
+Convert sql data to a txt file.
+-	Do your exercise
+For collect test data (real scenario), patient could click this button to start sensor again and record data for predicting , and to analyse his result of activity in the next step.
+-	Train Data
+Create model based on the training data (from converted data), predict the result from DO YOUR EXERCISE. Finally, classify your activity walking, running or jumping.
+NOTE: For better trained model result, I have set a solid enough training set in assets folder as the default input (C:\Users\yokasa\Desktop\challenge1\challenge1\app\src\main\assets\activity_data_final). If you want to training your own data(step : convert data), please modify code in  challenge1\challenge1\app\src\main\java\com\example\prateekvishnu\walkrunjump\TrainActivity.java
+And then change line 78, to Environment.getExternalStorageDirectory() + "/Android/Data/CHALLENGE1/database.txt" as the training input.
+-	Measure your activity
+Click this button, you will come to a new page which contains a map component. To measure your walking or running distance and speed accurately, please make sure that turn on device’s internet and walk outdoor. When you click start, the map will start to record your path noted by a green point and stop noted by a red point. 
+-  Upload
+	  Now, you can successfully upload recorded activity data to online server(Bmob).
